@@ -40,3 +40,39 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/posts/new" for ::1 at 2020-08-25 21:28:31 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 353ms (Views: 338.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2020-08-25 21:29:03 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DOKs2huHgIF5uVkC65rtiYOgmTjUsfeQyUxg/Eb8cp7sRl7MCiHLQlbdkSCuJFE39rc7DLH+f9OwwLLa3C8+kg==", "title"=>"Sun", "description"=>"Sunny", "commit"=>"Submit Post"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Sun"], ["description", "Sunny"], ["created_at", "2020-08-26 01:29:03.725838"], ["updated_at", "2020-08-26 01:29:03.725838"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 31ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/posts/new" for ::1 at 2020-08-25 21:29:41 -0400
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2020-08-25 21:29:53 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FMmQpannPorq9S1kMQXoUPWlJ165nQVF/x7ZGDAfAhP0bWKzuEF1ScWR5UZ0u1TugLKFatzSjQaGkgs+qsxOHw==", "title"=>"Sun", "description"=>"Sunny", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Sun"], ["description", "Sunny"], ["created_at", "2020-08-26 01:29:53.197188"], ["updated_at", "2020-08-26 01:29:53.197188"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 34ms (ActiveRecord: 4.1ms)
+
+
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
